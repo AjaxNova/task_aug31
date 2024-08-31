@@ -58,7 +58,7 @@ class CustomCartItemWidget extends StatelessWidget {
                               ),
                               const Icon(
                                 Icons.delete,
-                                color: Colors.red,
+                                color: checkoutButtonColor,
                               )
                             ],
                           ),
