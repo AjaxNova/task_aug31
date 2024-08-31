@@ -99,12 +99,12 @@ class Homescreen extends StatelessWidget {
                 SpecialProductWidget(
                   size: size,
                   title: 'Wireless Headphone',
-                  imagePath: 'asset/images/earpode.png',
+                  imagePath: 'asset/images/headphones-background-design.png',
                 ),
                 SpecialProductWidget(
                   size: size,
                   title: 'Woman Sweater',
-                  imagePath: 'asset/images/sweater.jpeg',
+                  imagePath: 'asset/images/sweater_2.png',
                 )
               ],
             ),
@@ -117,12 +117,12 @@ class Homescreen extends StatelessWidget {
                 SpecialProductWidget(
                   size: size,
                   title: 'Wireless Headphone',
-                  imagePath: 'asset/images/earpode.png',
+                  imagePath: 'asset/images/headphones-background-design.png',
                 ),
                 SpecialProductWidget(
                   size: size,
                   title: 'Woman Sweater',
-                  imagePath: 'asset/images/sweater.jpeg',
+                  imagePath: 'asset/images/sweater_2.png',
                 )
               ],
             ),

@@ -56,8 +56,17 @@ class _HomeScreenButtonsState extends State<HomeScreenButtons> {
         notchSmoothness: NotchSmoothness.defaultEdge,
         leftCornerRadius: 20,
         rightCornerRadius: 20,
-        onTap: (index) => setState(() => currentIndex = index),
-        //other params
+        onTap: (index) {
+          if (index != 2) {
+            setState(() {
+              currentIndex = index;
+            });
+          } else {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const Cartpage(),
+            ));
+          }
+        },
       ),
       body: allPages[currentIndex],
     );

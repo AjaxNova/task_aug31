@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test_aug/constants/colors.dart';
+import 'package:flutter_test_aug/widgets/cart_app_bar.dart';
+import 'package:flutter_test_aug/widgets/cart_checkout_bar.dart';
+import 'package:flutter_test_aug/widgets/custom_cart_widget.dart';
 
 class Cartpage extends StatelessWidget {
   const Cartpage({super.key});
@@ -10,31 +12,31 @@ class Cartpage extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
-        appBar: PreferredSize(
-            preferredSize: Size(double.infinity, size.height * 0.7),
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
-              child: SizedBox(
-                  height: size.height * 0.07,
-                  width: double.infinity,
-                  child: Row(
-                    children: [
-                      const CircleAvatar(
-                        backgroundColor: appBarIconColor,
-                        radius: 23,
-                        child: Icon(
-                          CupertinoIcons.left_chevron,
-                          size: 20,
-                        ),
-                      ),
-                      SizedBox(
-                        width: size.width * 0.3,
-                      ),
-                      const Text("My Cart")
-                    ],
-                  )),
-            )),
+        bottomNavigationBar: const CheckOutBottomBar(),
+        backgroundColor: cartPageScaffoldColor,
+        appBar: cartAppBar(size, context),
+        body: ListView(
+          children: const [
+            CustomCartItemWidget(
+              amount: r"$70.00",
+              itemPath: "asset/images/sweater_2.png",
+              itemCategory: "Woman Fashion",
+              itemName: "Woman Sweater",
+            ),
+            CustomCartItemWidget(
+              amount: r"$55.00",
+              itemPath: "asset/images/smart_watch.png",
+              itemCategory: "Electronics",
+              itemName: "Smart Watch",
+            ),
+            CustomCartItemWidget(
+              amount: r"$70.00",
+              itemPath: "asset/images/headphones-background-design.png",
+              itemCategory: "Electronics",
+              itemName: "Wireless headphone",
+            )
+          ],
+        ),
       ),
     );
   }
